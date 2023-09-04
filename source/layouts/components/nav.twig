@@ -1,0 +1,24 @@
+<div class="nav">
+	<ul class="nav__list {{ bemMix }}">
+		{% for link in links %}
+			<li>
+				<a href="{{ page != 'index' ? 'index.html' }}{{ link.url }}" class="nav__link">
+					{{ link.title }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<p class="nav__question">{{question}}</p>
+	{% for link in socials %}
+		<li>
+			<a class="nav__socials-link nav__socials-link--{{ link.id }} {{ link.narrow ? 'nav__socials-link--narrow' }}" href="{{ link.url }}">
+				<span class="visually-hidden">{{ link.title }}</span>
+			</a>
+		</li>
+	{% endfor %}
+	<div class="nav__contacts">
+		<a href="{{tel.url}}"> {{tel.title}}</a>
+		<p>{{address}}</p>
+		<a href="{{webSite}}">{{webSite}}</a>
+	</div>
+</div>

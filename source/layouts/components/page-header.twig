@@ -1,0 +1,13 @@
+<header class="page-header {{ bemMix }}">
+	{% include 'logo.twig' %}
+
+	<p class="page-header__heading">{{caption}}</p>
+
+	<nav class="page-header__nav" id="nav">
+		{% include 'nav.twig' with { bemMix: 'page-header__nav-list', navLinks } %}
+	</nav>
+
+	<button class="page-header__toggler" type="button" aria-controls="nav" aria-expanded="false" data-toggler>
+		<span class="visually-hidden">Переключить режим отображения меню.</span>
+	</button>
+</header>

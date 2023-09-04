@@ -12,10 +12,11 @@
 		{% endfor %}
 	</head>
 	<body>
-		{# For svelte #}{# <div class="page">{{ app.page }}</div> #}
-
-		{# For vue #}{# {{ app.page }} #}
-
+		<div class="page">
+			{% block header %}
+				{% include 'components/page-header.twig' with data %}
+			{% endblock %}
+		</div>
 		<script>
 			window.appData = {{ appData|json_encode() }};
 		</script>
